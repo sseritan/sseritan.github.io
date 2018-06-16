@@ -1,0 +1,34 @@
+# ----------------------- #
+#      Main Configs       #
+# ----------------------- #
+
+url: http://stefanseritan.com
+title: Stefan Seritan
+email: sseritan@gmail.com
+author: Stefan Seritan
+description: "Personal webpage for Stefan Seritan"
+copyright: 'Copyright &copy; 2018 Stefan Seritan. All Rights Reserved.'
+credits: 'Credit to <a href="https://github.com/swcool">Shane Weng</a> for the <a href="https://github.com/swcool/landing-page-theme">base Jekyll template</a>.'
+
+# ----------------------- #
+#    Jekyll & Plugins     #
+# ----------------------- #
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+collections:
+  - papers
+
+# ----------------------- #
+#   3rd Party Settings    #
+# ----------------------- #
+
+social:
+  - title: linkedin
+    url: https://lnkd.in/stefan-seritan
+  - title: bitbucket
+    url: https://bitbucket.org/sseritan
+  - title: github
+    url: https://github.com/sseritan
+

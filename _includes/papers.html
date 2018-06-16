@@ -1,0 +1,62 @@
+<section id="papers">
+
+	<div class="content-header">
+		<center>
+			<h1>Publications</h1>
+		</center>
+	</div>
+
+	{% for paper in site.papers reversed %}
+		{% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
+	    {% if thecycle == 'even' %}
+
+			<div class="content-section-c">
+
+		        <div class="container">
+
+		            <div class="row">
+		                <div class="col-lg-5 col-sm-6">
+		                    <h3 class="section-heading">{{ paper.title }}</h2>
+		                    <div class="lead">
+		                    	{{ paper.authors }}<br/>
+		                    	<a href="{{ paper.doi }}">{{ paper.doi }}</a>
+		                    </div>
+		                </div>
+		                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+		                  <img class="img-responsive" src="assets/images/papers/{{ paper.img }}" alt="">
+		                </div>
+		            </div>
+
+		        </div>
+		        <!-- /.container -->
+
+		    </div>
+
+		{% else %}
+
+		    <div class="content-section-d">
+
+		        <div class="container">
+
+		            <div class="row">
+		                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+		                    <h3 class="section-heading">{{ paper.title }}</h2>
+		                    <div class="lead">
+		                    	{{ paper.authors }}<br/>
+		                    	<a href="{{ paper.doi }}">{{ paper.doi }}</a>
+		                    </div>
+		                </div>
+		                <div class="col-lg-5 col-sm-pull-6  col-sm-6">
+		                	<img class="img-responsive" src="assets/images/papers/{{ paper.img }}" alt="">
+		                </div>
+		            </div>
+
+		        </div>
+		        <!-- /.container -->
+
+		    </div>
+		    <!-- /.content-section-b -->
+    {% endif %}
+
+	{% endfor %}
+</section>
