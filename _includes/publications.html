@@ -6,7 +6,7 @@
 	</div>
 
 	<!-- Latest 3 papers should be previewed -->
-	{% assign papers = site.papers | sort: 'date' | reverse %}
+	{% assign papers = site.categories.publication | sort: 'date' | reverse %}
 	{% for paper in papers limit:3 %}
 		{% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
 	    {% if thecycle == 'even' %}

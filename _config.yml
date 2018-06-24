@@ -17,10 +17,6 @@ credits: 'Credit to <a href="https://github.com/swcool">Shane Weng</a> for the <
 # Build settings
 markdown: kramdown
 permalink: pretty
-collections:
-  papers:
-      output: true
-      permalink: /:collection/:name
 
 # ----------------------- #
 #   3rd Party Settings    #

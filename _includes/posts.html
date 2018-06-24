@@ -6,7 +6,7 @@
 	</div>
 
 	<!-- Latest 3 posts should be previewed -->
-	{% assign posts = site.posts | sort: 'date' | reverse %}
+	{% assign posts = site.categories.blog | sort: 'date' | reverse %}
 	{% for post in posts limit:3 %}
 		{% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
 	    {% if thecycle == 'even' %}
