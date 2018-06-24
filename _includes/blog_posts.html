@@ -1,5 +1,10 @@
 <section id="posts">
 
+    <div class="container content-header text-center">
+        <br/><br/>
+        <h2>Blog Posts</h2>
+    </div>
+
 <!-- Page Content -->
 {% for post in site.posts reversed %}
   {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
@@ -13,7 +18,7 @@
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
                     <h2 class="section-heading">{{ post.title }}</h2>
-                    <div class="lead">{{ post.content }}</div>
+                    <div class="lead">{{ post.description }}</div>
                 </div>
                 <div class="col-lg-5 col-lg-offset-2 col-sm-6">
                     <img class="img-responsive" src="assets/images/posts/{{ post.img }}" alt="">
@@ -36,7 +41,7 @@
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
                     <h2 class="section-heading">{{ post.title }}</h2>
-                    <div class="lead">{{ post.content }}</div>
+                    <div class="lead">{{ post.description }}</div>
                 </div>
                 <div class="col-lg-5 col-sm-pull-6  col-sm-6">
                   <img class="img-responsive" src="img/posts/{{ post.img }}" alt="">

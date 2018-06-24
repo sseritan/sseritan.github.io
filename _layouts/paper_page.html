@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	{% include head.html %}
+
+	<body>
+		{% include navbar_noscroll.html %}
+
+		<section id="content">
+			
+			<div class="page-header">
+				<div class="container">
+					<div class="row">
+		                <div class="col-lg-5 col-sm-6">
+		                    <h3 class="section-heading">{{ page.title }}</h3>
+		                    <div class="lead">
+		                    	{{ page.authors }}<br/>
+		                    	<a href="https://doi.org/{{ page.doi }}">{{ page.doi }}</a>
+		                    </div>
+		                </div>
+		                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+		                  <img class="img-responsive" src="{{ site.baseurl }}/assets/images/papers/{{ page.img }}" alt="">
+		                </div>
+		            </div>
+				</div>
+				<!-- End paper banner-->
+
+				<div class="container">
+					{{ page.content }}
+				</div>
+			</div>
+		</section>
+
+		{% include contact.html %}
+		{% include footer.html %}
+		{% include js.html %}
+	</body>
+</html>
