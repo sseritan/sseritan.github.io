@@ -1,0 +1,81 @@
+<section id="posts">
+
+	<div class="content-header text-center">
+		<br/><br/>
+		<h2>Recent Blog Posts</h2>
+	</div>
+
+	<!-- Latest 3 posts should be previewed -->
+	{% assign posts = site.posts | sort: 'date' | reverse %}
+	{% for post in posts limit:3 %}
+		{% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
+	    {% if thecycle == 'even' %}
+
+			<div class="content-section-c">
+
+		        <div class="container">
+
+		            <div class="row">
+		                <div class="col-lg-5 col-sm-6">
+	                    <h2 class="section-heading">{{ post.title }}</h2>
+	                    <div class="lead">{{ post.description }}</div>
+		                </div>
+		                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+		                  <img class="img-responsive" src="assets/images/posts/{{ post.img }}" alt="">
+		                </div>
+		            </div>
+
+		        </div>
+		        <!-- /.container -->
+
+		    </div>
+
+		{% else %}
+
+		    <div class="content-section-d">
+
+		        <div class="container">
+
+		            <div class="row">
+		                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+                    	<h2 class="section-heading">{{ post.title }}</h2>
+	                    <div class="lead">{{ post.description }}</div>
+		                </div>
+		                <div class="col-lg-5 col-sm-pull-6  col-sm-6">
+		                	<img class="img-responsive" src="assets/images/posts/{{ post.img }}" alt="">
+		                </div>
+		            </div>
+
+		        </div>
+		        <!-- /.container -->
+
+		    </div>
+		    <!-- /.content-section-b -->
+    {% endif %}
+
+	{% endfor %}
+
+	<!-- Older posts are just listed -->
+
+	{% if posts.size > 3 %}
+		<div class="content-header text-center">
+			<h2>Older Blog Posts</h2>
+		</div>
+
+		<div class="content-section-d">
+			{% for post in posts offset:3 %}
+				<div class="container">
+
+
+		            <div class="row">
+		                    <div class="lead">
+		                    	<a href={{ site.baseurl }}{{ post.url }}> {{ post.title }} </a>
+		                    	({{ post.date | date_to_long_string }})
+		                    </div>
+		            </div>
+		        </div>
+
+			{% endfor %}
+		</div>
+	{% endif %}
+</section>

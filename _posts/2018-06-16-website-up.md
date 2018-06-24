@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post_page
 img: jekyll-logo.png
 category: Posts
 title: Website is Up!

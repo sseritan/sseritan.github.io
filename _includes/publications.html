@@ -17,7 +17,9 @@
 
 		            <div class="row">
 		                <div class="col-lg-5 col-sm-6">
-		                    <h3 class="section-heading">{{ paper.title }}</h3>
+		                    <h3 class="section-heading">
+		                    	<a href="{{ paper.url }}">{{ paper.title }}</a>
+		                    </h3>
 		                    <div class="lead">
 		                    	{{ paper.authors }}<br/>
 		                    	<a href="https://doi.org/{{ paper.doi }}">{{ paper.doi }}</a>
@@ -41,7 +43,9 @@
 
 		            <div class="row">
 		                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
-		                    <h3 class="section-heading">{{ paper.title }}</h3>
+		                    <h3 class="section-heading">
+		                    	<a href="{{ paper.url }}">{{ paper.title }}</a>
+		                    </h3>
 		                    <div class="lead">
 		                    	{{ paper.authors }}<br/>
 		                    	<a href="https://doi.org/{{ paper.doi }}">{{ paper.doi }}</a>
@@ -63,23 +67,26 @@
 
 	<!-- Older papers are just listed -->
 
-	<div class="content-header text-center">
-		<h2>Older Publications</h2>
-	</div>
+	{% if papers.size > 3 %}
 
-	<div class="content-section-d">
-		{% for paper in papers offset:3 %}
-			<div class="container">
+		<div class="content-header text-center">
+			<h2>Older Publications</h2>
+		</div>
+
+		<div class="content-section-d">
+			{% for paper in papers offset:3 %}
+				<div class="container">
 
 
-	            <div class="row">
-	                    <div class="lead">
-	                    	<a href={{ site.baseurl }}{{ paper.url }}> {{ paper.title }} </a>
-	                    	({{ paper.date | date_to_long_string }})
-	                    </div>
-	            </div>
-	        </div>
+		            <div class="row">
+		                    <div class="lead">
+		                    	<a href={{ site.baseurl }}{{ paper.url }}> {{ paper.title }} </a>
+		                    	({{ paper.date | date_to_long_string }})
+		                    </div>
+		            </div>
+		        </div>
 
-		{% endfor %}
-	</div>
+			{% endfor %}
+		</div>
+	{% endif %}
 </section>
