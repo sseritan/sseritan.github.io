@@ -8,4 +8,4 @@ github_application:
   client_id: 2f3fc917fecf355ed9cf
   code_authenticator: https://sseritan-website-gatekeeper.herokuapp.com/authenticate/
   callback_url: https://www.stefanseritan.com/gpgc_redirect.html
-enable_diagnostics: false
+enable_diagnostics: true
