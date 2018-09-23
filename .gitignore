@@ -1,2 +1,6 @@
 _site
 .DS_Store
+
+# Windows-specific Jekyll files
+Gemfile*
+vendor/
